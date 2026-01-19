@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Design</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 100%;
+            max-height: auto;
+            border: 2px solid black;
+        }
+
+        .header {
+            height: 50px;
+            display: flex;
+            background-color: purple;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .nav ul li {
+            display: inline;
+            padding: 15px;
+            color: white;
+        }
+
+        .box {
+            border: 2px solid black;
+            background-color: rgb(73, 112, 146);
+            height: 300px;
+            width: 90%;
+            margin: auto;
+
+        }
+
+       
+        .box1{
+            border: 1px solid black;
+            background-color: lightcoral;
+            height: 250px;
+            width: 250px;
+            display: inline-flex;
+            margin-left: 20px;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            left: 190px;
+            top: 10px;
+            
+           
+        }
+        .div{
+            border: 1px solid coral;
+            height: 100px;
+            width: 90%;
+            border-radius: 15px;
+            background-color: blanchedalmond;
+           margin: 50px;
+           margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <nav class="nav">
+                <ul>
+                    <li>About</li>
+                    <li>Services</li>
+                    <li>Contact</li>
+                </ul>
+            </nav>
+        </header>
+        <div class="box">
+            <div class="box1"></div>
+            <div class="box1"></div>
+        </div>
+        <div class="div">
+            Welcome to Alpha seller your first Home
+        </div>
+        <footer class="footer">Footer</footer>
+    </div>
+</body>
+
+</html>

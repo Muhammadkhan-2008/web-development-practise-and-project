@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar Design</title>
+    <style>
+        :root {
+            --linear: solid green;
+            --white: #ffffff;
+            --black: black;
+
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+        }
+
+        .navbar {
+            border: 2px solid var(--black);
+            background: linear-gradient(purple, steelblue);
+
+
+        }
+
+        .navbar nav {
+            background-color: var(--linear);
+            border: var(--black);
+            overflow: hidden;
+        }
+
+        .navbar nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 15px;
+        }
+
+        .navbar nav ul li {
+            float: left;
+            color: rgb(92, 90, 90);
+            padding: 14px 16px;
+            text-align: center;
+
+        }
+
+        .navbar nav ul li a {
+            text-decoration: none;
+            color: var(--black);
+            font-weight: bold;
+            font-size: 18px;
+            padding: 14px 16px;
+            display: block;
+        }
+
+        .navbar nav ul li a:hover {
+            background-color: var(--black);
+            color: var(--white);
+            border-radius: 4px;
+        }
+        /* pseudo code block
+        ::selection {
+            background-color: yellow;
+            color: var(--white);
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</body>
+
+</html>
