@@ -1,0 +1,1 @@
+let btn = document.getElementsByClassName("btn") ; btn[0].style.backgroundColor = "yellow";   let btn1 = document.getElementsByClassName("btn1") ; btn1[0].style.backgroundColor = "black"; let btn2 = document.getElementsByClassName("btn1") ; btn2[0].style.backgroundColor = "red";

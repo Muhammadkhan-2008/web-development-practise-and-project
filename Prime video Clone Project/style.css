@@ -1,0 +1,20 @@
+*{
+    margin: 0;
+    padding: 0; 
+    box-sizing: border-box;
+}
+.main-section{
+   
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+.bg-divider{
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRomqEHCezfnECEU5GnenaOySTb64kYiYhKCg&s);
+}
+.main-div{
+    background-color:#00050D;
+}
+.card-card{
+    background-color: #00050D;
+}

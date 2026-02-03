@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <!-- bootstrap test -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+     <style>
+        .form-control::placeholder {
+            color: green 
+        }
+        input{
+            color: red !important;
+        }
+option:checked{
+    color: green;
+    
+}
+.form-check-input:checked {
+  background-color: red;
+  border-color: red;
+}
+
+
+
+ </style>
+</head>
+
+<body>
+
+    <h1 class="text-success">Hello, world!</h1>
+
+    <div class="mb-3">
+
+        <input type="text" id="name" class="form-control .text-success" placeholder="Enter your name">
+    </div>
+    <select class="form-select text-danger" onchange="this.classList.replace('text-danger', 'text-success')" aria-label="Default select example">
+  <option selected>Select an option</option>
+  <option>One</option>
+  <option>Two</option>
+  <option>Three</option>
+</select>
+
+<select class="form-select text-success" aria-label="Disabled select example" disabled>
+  <option selected>Open this select menu</option>
+  <option value="1">One</option>
+  <option value="2">Two</option>
+  <option value="3">Three</option>
+</select>
+
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" value="" id="checkDefault">
+  <label class="form-check-label" for="checkDefault">
+    Default checkbox
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input " type="checkbox" value="" id="checkChecked" checked>
+  <label class="form-check-label" for="checkChecked">
+    Checked checkbox
+  </label>
+</div>
+
+<button class="btn btn-danger btn-sm">
+  Small Button
+</button>
+
+    <!-- bootstrap test -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
