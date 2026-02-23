@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ES6 Practice</title>
+</head>
+<body>
+  <h1>ES6 Practice (Open Console)</h1>
+
+  <script>
+    // Q1) Template Literal + const
+    // Task:
+    // const city = "Lahore";
+    // const temperature = 32;
+    // Template literal use karke output banao:
+    // "Today in Lahore, temperature is 32C."
+    // TODO: apna code yahan likho
+    const city ="Ghotki";
+    const Temp = 23;
+    const det = `Today in ${city} the temperature is ${Temp}C.`;
+    console.log(det);
+
+
+    // Q2) let vs const
+    // Task:
+    // 1) const tax = 0.15;
+    // 2) let price = 2000;
+    // 3) price ko update karo: price = price + price * tax;
+    // 4) console me final price print karo.
+    // NOTE: const ko reassign mat karna.
+    // TODO: apna code yahan likho
+    const tax=0.15;
+    let price=2000;
+    price = price+price*tax;
+    console.log(price);
+
+
+    // Q3) New String Methods
+    // Task:
+    // const course = "JavaScript ES6";
+    // in methods ka output console me print karo:
+    // 1) course.includes("Script")
+    // 2) course.startsWith("Java")
+    // 3) course.endsWith("ES6")
+    // 4) "ha".repeat(3)
+    // TODO: apna code yahan likho
+    const course = "JavaScript ES6";
+    // console.log(course.include("Script"));
+    console.log(course.startsWith("Java"));
+    console.log(course.endsWith("ES6"));
+    console.log(course.repeat(3));
+
+    //swaping two numbers without using third variable
+    let a = 5;
+    let b = 10;
+    // console.log(`Before swapping: a = ${a}, b = ${b}`);
+    // a = a + b; // a now holds the sum of a and b
+    // b = a - b; // b now holds the original value of a
+    // a = a - b; // a now holds the original value of b
+    a=a+5;
+    b=a-5;
+    console.log(`After swapping: a = ${a}, b = ${b}`);
+
+    //Q5 array destructuring
+    let colors = ["Red", "Green", "Blue"];
+    // array destructuring use karke colors ko alag variables me store karo: color1, color2, color3
+    // console me in variables ka output print karo.
+    let [col1,col2,col3]=colors;
+    console.log(`The color ${col1} is stored in col1 variable and ${col2} is stored in col2 variable and ${col3} is stored in col3 variable.`);
+
+    //Q6 object destructuring
+    let biodata = {
+      name: `Alice`,
+      age: 30,
+      town: `London`,
+      school: `ABC High School`
+    };
+    // object destructuring use karke person ke properties ko alag variables me store karo: name, age, city
+    // console me in variables ka output print karo.
+    let {name, age, town, school} = biodata;
+    console.log(`My name is ${name}, I am ${age} years old, i live in ${town} and I study in ${school}.`);
+
+    //Q6 FAT ARROW FUNCTION
+    // Task:
+    // 1) function sum(a, b) {
+    //      return a + b;
+    //    }
+    // 2) is function ko fat arrow function me convert karo.
+    // 3) console me sum(5, 10) ka output print karo.
+    let sum =(a,b) =>{
+        return a+b;
+    }
+    console.log(sum(5,10));
+
+    //Task2
+    //no use of return statement and curly braces if the function body has only one line of code
+    let a1 =20;
+    let b2 =30;
+     sum2 = (a,b) => a+b;
+    console.log(sum2(a1,b2));
+
+    //task3 
+    //create 1 variable and use one in argument then add
+    let a2=49;
+    sum3 = (b) => a2+b;
+    console.log(sum3(51));
+    
+    //Q7 rest parameter
+    // Task:
+    // 1) function summall(...num) {
+    //      // num is an array of all arguments passed to the function
+    //      let total = 0;
+    //      for (let i = 0; i < num.length; i++) {
+    //        total += num[i];
+    //      }
+    //      return total;
+    //    }
+    // 2) is function ko modern ES6 way me likho.
+    // 3) console me summall(5, 10, 11) ka
+    //    output print karo.
+     function summall(...num){
+         let total = 0;
+         for (let i = 0; i < num.length; i++){
+             total += num[i];
+         }
+         return total;
+     }
+     console.log(summall(5,10,11));
+
+     //Q8 spread operator
+      // Task:  
+    // 1) const arr1 = [1, 2, 3];
+    // 2) const arr2 = [4, 5, 6];
+    // 3) arr1 aur arr2 ko combine karke ek new array banao
+    //    using spread operator.
+    // 4) console me combined array ka output print karo.
+    const arr1 = [1,2,3];
+    const arr2 = [4,5,6];
+    const combined = [...arr1, ...arr2];
+    console.log(combined);
+     
+    //apply push copy method
+   var arr3 = [7,8,9];
+    arr3.push(...arr1);
+    console.log(arr3);
+    //apply method
+    var arr4 = [10,11,12];
+    arr4.apply(arr4, arr2);
+    console.log(arr4);
+
+    
+
+   
+  </script>
+</body>
+</html>

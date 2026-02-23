@@ -1,0 +1,164 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spotify - Web Player: Music for everyone</title>
+  <link rel="icon" sizes="32x32" type="image/png" href="../assests/favicon32.png" />
+  <link rel="icon" sizes="16x16" type="image/png" href="../assests/favicon16.png" />
+  <link rel="icon" href="../assests/favicon.ico" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="../script/style.css" />
+</head>
+<body>
+  <header class="top-nav">
+    <div class="top-left">
+      <button class="circle-btn spotify-btn" aria-label="Spotify">
+        <img src="../assests/spotify-mark-white.svg" alt="Spotify" />
+      </button>
+      <button class="circle-btn" aria-label="Home">
+        <i class="fa-solid fa-house"></i>
+      </button>
+      <label class="search-pill">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" value="" placeholder="What do you want to play?" />
+        <span class="sep"></span>
+        <i class="fa-solid fa-inbox"></i>
+      </label>
+    </div>
+
+    <div class="top-right">
+      <a href="#">Premium</a>
+      <a href="#">Support</a>
+      <a href="#">Download</a>
+      <span class="top-sep"></span>
+      <a href="#" class="install-link"><i class="fa-regular fa-circle-down"></i> Install App</a>
+      <a href="#">Sign up</a>
+      <button class="login-btn">Log in</button>
+    </div>
+  </header>
+
+  <div class="main-layout">
+    <aside class="left-panel">
+      <div class="panel-card library-head">
+        <h3>Your Library</h3>
+        <button class="plus-btn" aria-label="Create"><i class="fa-solid fa-plus"></i></button>
+      </div>
+
+      <div class="panel-card podcast-card">
+        <h4>Let's find some podcasts to follow</h4>
+        <p>We'll keep you updated on new episodes</p>
+        <button>Browse podcasts</button>
+      </div>
+
+      <div class="left-links">
+        <a href="#">Legal</a>
+        <a href="#">Safety & Privacy Center</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Cookies</a>
+        <a href="#">About Ads</a>
+        <a href="#">Accessibility</a>
+      </div>
+
+      <a href="#" class="cookies-link">Cookies</a>
+
+      <button class="lang-btn"><i class="fa-solid fa-globe"></i> English</button>
+    </aside>
+
+    <main class="content-panel">
+      <section class="spotify-section">
+        <div class="section-head">
+          <h2>Trending songs</h2>
+          <a href="#">Show all</a>
+        </div>
+        <div id="trendingRow" class="media-row"></div>
+      </section>
+
+      <section class="spotify-section">
+        <div class="section-head">
+          <h2>Popular artists</h2>
+          <a href="#">Show all</a>
+        </div>
+        <div id="artistsRow" class="media-row"></div>
+      </section>
+
+      <section class="spotify-section">
+        <div class="section-head">
+          <h2>Popular albums and singles</h2>
+          <a href="#">Show all</a>
+        </div>
+        <div id="albumsRow" class="media-row"></div>
+      </section>
+
+      <section class="spotify-section">
+        <div class="section-head">
+          <h2>Popular radio</h2>
+          <a href="#">Show all</a>
+        </div>
+        <div id="radioRow" class="media-row"></div>
+      </section>
+
+      <section class="spotify-section">
+        <div class="section-head">
+          <h2>Featured Charts</h2>
+          <a href="#">Show all</a>
+        </div>
+        <div id="chartsRow" class="media-row"></div>
+      </section>
+
+      <footer class="site-footer">
+        <div class="footer-grid">
+          <div>
+            <h4>Company</h4>
+            <a href="#">About</a>
+            <a href="#">Jobs</a>
+            <a href="#">For the Record</a>
+          </div>
+          <div>
+            <h4>Communities</h4>
+            <a href="#">For Artists</a>
+            <a href="#">Developers</a>
+            <a href="#">Advertising</a>
+            <a href="#">Investors</a>
+            <a href="#">Vendors</a>
+          </div>
+          <div>
+            <h4>Useful links</h4>
+            <a href="#">Support</a>
+            <a href="#">Free Mobile App</a>
+            <a href="#">Popular by Country</a>
+            <a href="#">Import your music</a>
+          </div>
+          <div>
+            <h4>Spotify Plans</h4>
+            <a href="#">Premium Individual</a>
+            <a href="#">Premium Duo</a>
+            <a href="#">Premium Family</a>
+            <a href="#">Premium Student</a>
+            <a href="#">Spotify Free</a>
+          </div>
+
+          <div class="socials">
+            <button aria-label="Instagram"><i class="fa-brands fa-instagram"></i></button>
+            <button aria-label="Twitter"><i class="fa-brands fa-twitter"></i></button>
+            <button aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></button>
+          </div>
+        </div>
+
+        <div class="copyright">© 2026 Spotify AB</div>
+      </footer>
+    </main>
+  </div>
+
+  <div class="preview-bar">
+    <div>
+      <p class="preview-label">Preview of Spotify</p>
+      <p class="preview-text">Sign up to get unlimited songs and podcasts with occasional ads. No credit card needed.</p>
+    </div>
+    <button>Sign up free</button>
+  </div>
+
+  <audio id="audioPlayer" preload="metadata"></audio>
+  <script src="../javascript/app.js"></script>
+</body>
+</html>

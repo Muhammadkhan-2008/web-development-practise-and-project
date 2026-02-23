@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>ES6-code and topics</title>
+    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com">
+
+    
+</head>
+<body>
+   <script>
+ // Template Literals
+    const name = "Muhammad khan";
+    const age = "17";
+    const msg = `My name is ${name} and My age is ${age}.`;
+    console.log(msg);
+
+    // let vs const
+    let str = " Hello World ";
+    console.log(str.startsWith("Hello")); // true
+    console.log(str.endsWith("ld")); // true
+    console.log(str.includes("o W")); // true
+    console.log( str.repeat(3) )
+//array destructuring 
+let proglang = ["JavaScript", "Python", "Java"];
+let [lang1,lang2,lang3]=proglang;
+console.log(lang1 + " " + lang2 + " " + lang3); //bara tareeka console krne ka
+console.log(`The programming languages are: ${lang1}, ${lang2}, and ${lang3}.`); //chota tareeka console krne kaa
+
+//object destructuring
+
+let biodata = {
+    call: `Muhammad Khan`,
+    umar: 17,
+    city: `Ghotki`,
+    Qualification: `intermediate`
+}
+
+//old way oject print karnay ka
+    console.log(biodata.call); 
+    console.log(`My name is ${biodata.call}, I am ${biodata.umar} years old, I live in ${biodata.city}, and my qualification is ${biodata.Qualification}.`); //object destructuring tareeka console krne ka
+    
+    //new way object print karnay ka using destructuring
+
+   let {call:naam, umar, city, Qualification} = biodata;  //we can rename the variables while destructuring by using : after the variable name
+
+    console.log(`My name is ${naam}, I am ${umar} years old, I live in ${city}, and my qualification is ${Qualification}.`); //object destructuring tareeka console krne ka
+
+    //object kai andr nested object
+    let students ={
+        std1: {
+            name: `Ali`,
+            age: 20,
+            class: `BSCS`,
+        },
+        std2: {
+            name: `Ahmed`,
+            age: 22,
+            class: `BSCS`
+        },
+        std3: {
+            name: `Aisha`,
+            age: 19,
+            class: `BSCS`
+        }
+    }
+    let {std1:{name:std1Name, age:std1Age, class:std1Class}, std2:{name:std2Name, age:std2Age, class:std2Class}, std3:{name:std3Name, age:std3Age, class:std3Class}} = students;
+    //printing the student details one by one
+    console.log(`Student 1: Name: ${std1Name}, Age: ${std1Age}, Class: ${std1Class}`);
+    console.log(`Student 2: Name: ${std2Name}, Age: ${std2Age}, Class: ${std2Class}`);
+    console.log(`Student 3: Name: ${std3Name}, Age: ${std3Age}, Class: ${std3Class}`);
+
+    //printing all student names in one line using template literals
+    console.log(`The biodata of students are: \nname: ${std1Name} age: ${std1Age} class: ${std1Class} \nname:  ${std2Name} age: ${std2Age} class ${std2Class} and \nname:  ${std3Name} age: ${std3Age} class: ${std3Class}.`);
+ 
+    console.log(`The Studuents for BSCS are: ${std1Name}, ${std2Name}, and ${std3Name}.`);
+
+
+    //fat arrow function vs old function
+    //old function
+    let sum = function(a,b){
+        return a+b;
+    }
+    console.log(sum(5,10));
+
+    //fat arrow function
+    let sum2 = (a,b) => {
+        return a+b;
+    }
+    console.log(sum2(5,10));
+
+    //return statement ko aur chota karne ke liye agar function ke body me sirf ek line ka code hai to hum return statement ko bhi omit kar sakte hain aur uske sath curly braces bhi omit kar sakte hain.
+ let a = 30;
+ let b = 20;
+ let sum3 = (a,b) => a+b;
+ console.log(sum3(a,b));
+
+
+    //if there is only one parameter in the function then we can omit the parentheses
+    let square = x => {
+        return x*x;
+    }   
+    console.log(square(5));
+
+    //Default parameters 
+    //what is default function parameters?
+    //default function parameters allow us to set default values for function parameters. If the function is called without an argument for that parameter, the default value will be used.
+    //default function parameter kiya hai aur iska use kyu hota hai?
+    //default parameter ka use tab hota hai jab hum chahte hain ki agar function ko call karte waqt kisi parameter ke liye argument na diya jaye to us parameter ke liye ek default value use ho jaye. Isse hum apne code ko zyada flexible aur error-free bana sakte hain.
+
+    //addition of two numbers with default parameters
+  function add(a,b){
+    b=(typeof b !== 'undefined') ? b : 1; //agar b parameter ke liye argument nahi diya gaya hai to uske liye default value 0 use karo
+    console.log(a+b);
+  }
+    add(5);
+
+    // let add = (a=0, b=0) => a+b;
+    // console.log(add(5)); //agar hum sirf ek argument dete hain to dusre parameter ke liye default value use hoti hai, is case me b ke liye default value 0 use hoti hai, to output 5 aata hai.
+    // console.log(add()); //agar hum dono parameters ke liye argument nahi dete hain to dono parameters ke liye default value use hoti hai, is case me a aur b dono ke liye default value 0 use hoti hai, to output 0 aata hai.
+
+    //Rest parameter
+    //what is rest parameter?
+    //rest parameter allows us to represent an indefinite number of arguments as an array. It is    
+//denoted by three dots (...) followed by the name of the array that will hold the rest of the arguments.
+    //rest parameter ka use kyu hota hai?
+    //rest parameter ka use tab hota hai jab hum chahte hain ki hum apne function me ek se zyada arguments pass kar sakein bina unke liye alag-alag parameters define kiye. Isse hum apne code ko zyada flexible aur reusable bana sakte hain.
+    
+    //old es5 way to sum of multiple numbers
+    function sumall(a,b){
+        console.log(a+b);
+    }
+    sumall(5,10,11); //agar hum is function ko call karte hain aur usme 3 arguments pass karte hain to output 15 aata hai, kyunki function me sirf 2 parameters defined hain, to third argument ignore ho jata hai.
+
+    //modern es6 way to add numbers in rest parameter
+    function summall2(...num){
+        let total = 0;
+        for (let i of num){
+            total += i;
+        }
+        console.log(total);
+    }
+    summall2(5,10,11); //agar hum is function ko call karte hain aur usme 3 arguments pass karte hain to output 26 aata hai, kyunki rest parameter ke through humne function me indefinite number of arguments pass kiye hain, to sabhi arguments ko sum karke output diya jata hai. yn agr hum infinite argument pass kre to bhi jwb ayega yhi kaam hai rest parameter hai
+
+    //spread operator
+    //what is spread operator?
+    //spread operator allows us to expand an iterable (like an array or string) into individual elements. It is denoted by three dots (...) followed by the name of the iterable that we want to expand.
+    //spread operator ka use kyu hota hai?
+    //spread operator ka use tab hota hai jab hum chahte hain ki hum apne code me kisi iterable (jaise array ya string) ke individual elements ko expand kar sakein. Isse hum apne code ko zyada flexible aur reusable bana sakte hain.
+    
+    //old es5 way to copy an array
+    let arr1 = [1,2,3];
+    let arr2 = arr1; //arr2 me arr1 ka reference store hota hai, to agar hum arr2 me koi change karte hain to arr1 me bhi change hota hai, kyunki dono variables same array ko point kar rahe hain.
+    arr2.push(4);   
+    console.log(arr1); //output [1,2,3,4] aata hai, kyunki arr1 aur arr2 dono same array ko point kar rahe hain.
+    console.log(arr2); //output [1,2,3,4] aata hai, kyunki arr1 aur arr2 dono same array ko point kar rahe hain.]
+
+    //modern es6 way to copy an array using spread operator
+    let arr3 = [1,2,3];
+    let arr4 = [...arr3,4,5]; //arr4 me arr3 ke individual elements copy hote hain, to agar hum arr4 me koi change karte hain to arr3 me koi change nahi hota hai, kyunki dono variables different arrays ko point kar rahe hain.
+    console.log(arr3); //output [1,2,3] aata hai, kyunki arr3 aur arr4 different arrays ko point kar rahe hain.
+    console.log(arr4); //output [1,2,3,4,5] aata hai, kyunki arr4 me arr3 ke individual elements copy hote hain aur usme 4 aur 5 bhi add kiye gaye hain.
+
+    //exponential operator
+    //what is exponential operator?
+    //exponential operator allows us to perform exponentiation (raising a number to the power of another number) in a more concise way. It is denoted by two asterisks (**) between the base and the exponent.
+    //exponential operator ka use kyu hota hai? 
+    //exponential operator ka use tab hota hai jab hum chahte hain ki hum apne code me exponentiation ko ek concise aur readable way me perform kar sakein. Isse hum apne code ko zyada clean aur maintainable bana sakte hain.
+
+    //old es5 way to calculate power of a number
+   let x = 2;
+    let y = 3;
+    let power = Math.pow(x,y); //Math.pow() method is used to calculate the power of a number in es5
+    console.log(power); //output 8 aata hai, kyunki 2 raised to the power of 3 is 8.
+
+    //modern es6 way to calculate power of a number using exponential operator
+    let x1 = 2;
+    let y1 = 3;
+    let power1 = x1**y1; //** is
+    console.log(power1); //output 8 aata hai, kyunki 2 raised to the power of 3 is 8.
+
+    
+   </script> 
+</body>
+</html>

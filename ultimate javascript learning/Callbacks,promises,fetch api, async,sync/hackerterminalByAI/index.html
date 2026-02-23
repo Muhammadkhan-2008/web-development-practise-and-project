@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hacker Terminal</title>
+    <style>
+        :root {
+            --bg: #020402;
+            --panel: #061006;
+            --text: #3eff3e;
+            --muted: #1f7a1f;
+            --border: #0b2a0b;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            background:
+                radial-gradient(circle at 20% 20%, #083308 0%, transparent 45%),
+                radial-gradient(circle at 80% 80%, #051d05 0%, transparent 40%),
+                var(--bg);
+            color: var(--text);
+            font-family: "Consolas", "Courier New", monospace;
+        }
+
+        .terminal {
+            width: min(900px, 92vw);
+            height: min(560px, 86vh);
+            border: 1px solid var(--border);
+            background: linear-gradient(to bottom, #051105, var(--panel));
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.55);
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .title {
+            margin: 0 0 16px;
+            font-size: 16px;
+            letter-spacing: 1px;
+            color: var(--muted);
+            text-transform: uppercase;
+        }
+
+        .line {
+            margin: 0 0 10px;
+            line-height: 1.4;
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+
+        .cursor {
+            display: inline-block;
+            width: 10px;
+            height: 18px;
+            background: var(--text);
+            animation: blink 1s steps(1) infinite;
+            vertical-align: middle;
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="terminal" id="terminal">
+        <h1 class="title">Secure Shell v9.4.1</h1>
+        <div id="output"></div>
+        <p class="line">&gt; <span class="cursor"></span></p>
+    </main>
+    <script src="hackerTerminalai.js"></script>
+</body>
+</html>
